@@ -1,6 +1,6 @@
 # tiny_hanabi
 This package implements the Tiny Hanabi Suite, a collection of six very small two-player common-payoff games, and tabular algorithms that compute joint policies for these games.
-The games in the tiny Hanabi suite were constructed by Neil Burch and Nolan Bard in 2018.
+The games in the Tiny Hanabi Suite were constructed by Neil Burch and Nolan Bard in 2018.
 Each game in the suite is structured as follows:
 1) Each player is privately dealt one of `num_cards` cards at uniform random
     (with replacement).
