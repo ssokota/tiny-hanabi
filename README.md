@@ -18,7 +18,7 @@ player 1's action, and player 2's action.
 ## Getting Started
 The file `scripts/interface.py` demonstrates how to use the package.
 - Try running `python scripts/interface.py A decpomdp ql --ql_init_lr 0.1 --init_epsilon 0.1 --num_episodes 10000 --plot` to run independent Q-learning on game A for 10,000 episodes.
-- Run `open results/figures/example.pdf` to see how it did.
+- Check `results/figures/example.pdf` to see how it did.
 
 ## What's in the Package?
 The package includes
