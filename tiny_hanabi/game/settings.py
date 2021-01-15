@@ -374,7 +374,7 @@ class VBMDP(Game):
 
         Attributes:
             See base class
-            payoffs (dict): The payoffs for the OB-MDP
+            payoffs (dict): The payoffs for the VB-MDP
             num_action_profiles (int): The number of action profiles
         """
         super().__init__(payoffs, optimal_return)
@@ -385,14 +385,14 @@ class VBMDP(Game):
     def start_states(self) -> tuple:
         """Return the start states
 
-        There is only one start state for the OB-MDP.
+        There is only one start state for the VB-MDP.
         """
         return ([],)
 
     def context(self) -> None:
         """Return the one belief state
 
-        As the name suggests, there is only one belief state in the OB-MDP.
+        As the name suggests, there is only one belief state in the VB-MDP.
         Note that we are returning something bijective with it, rather than
         actually computing it.
         """
@@ -407,13 +407,13 @@ class VBMDP(Game):
         return self.num_action_profiles
 
     def episode(self) -> list:
-        """Return list of (start, action, reward) OB-MDP transitions"""
+        """Return list of (start, action, reward) VB-MDP transitions"""
         return [(None, self.history[0], self.payoff())]
 
     def build(self, payoffs: np.ndarray) -> None:
-        """Build the OB-MDP corresponding to `payoffs`
+        """Build the VB-MDP corresponding to `payoffs`
 
-        Build the game by looping over all OB-MDP trajectories.
+        Build the game by looping over all VB-MDP trajectories.
 
         Args:
             payoffs: Payoff matrix indexed card1, card2, action1, action2
@@ -434,7 +434,7 @@ class VBMDP(Game):
                 action_profile, num_info_states, num_actions
             )
             tmp = []
-            # Payoff in OB-MDP is expected payoff over the one belief state
+            # Payoff in VB-MDP is expected payoff over the one belief state
             for c1 in range(num_cards):
                 for c2 in range(num_cards):
                     a1 = np.argmax(action_profile_table[c1])
