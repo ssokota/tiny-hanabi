@@ -31,7 +31,7 @@ def make_ql(
 
     Args:
         init_lr: The initial learning rate (is linearly decayed)
-        init_epsilon: The initial exploration rate (is linearly decayred)
+        init_epsilon: The initial exploration rate (is linearly decayed)
         num_episodes: The number of episodes to train for
         num_evals: The number of evaluations to do
 
