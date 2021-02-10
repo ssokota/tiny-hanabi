@@ -99,10 +99,6 @@ class Game(ABC):
     def episode(self) -> list:
         """Return information about the current episode's trajectory"""
 
-    def cummulative_reward(self) -> float:
-        """Return the cummulative reward for the current episode"""
-        return self.payoff()
-
     def reset(self, history: Optional[list] = None) -> None:
         """Reset the game to `history` or a random start state
 
