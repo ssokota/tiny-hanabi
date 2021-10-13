@@ -53,11 +53,11 @@ def make_hql(
     """Make a Hysteretic Q-Learner
 
     Hysteretic Q-learning is the same as Q-learning except that it uses
-    a smaller learning rate if the target was underestimated.
+    a smaller learning rate if the target was overestimated.
 
     Args:
         init_lr: Initial overestimation learning rate (is linearly decayed)
-        init_lr2: Initial underesimation learning rate (is linearly decayed)
+        init_lr2: Initial underestimation learning rate (is linearly decayed)
         init_epsilon: The initial exploration rate (is linearly decayred)
         num_episodes: The number of episodes to train for
         num_evals: The number of evaluations to do
@@ -65,7 +65,7 @@ def make_hql(
     Returns:
         HQ-learner
     """
-    assert init_lr > init_lr2
+    assert init_lr < init_lr2
     return QLearner(
         ValueActor(DoubleLrValueParameters(init_lr, init_lr2), init_epsilon),
         num_episodes,
